@@ -10,4 +10,19 @@ class ContactController extends Controller
     {
         return view('index');
     }
+
+    public function confirm(Request $request)
+    {
+        $contact = request->all();
+        return view('confirm', compact('contact'));
+    }
+
+    public function store(Request $request)
+    {
+        if ($request->input('action') === 'back')
+        {
+            return redirect('/')->withInput();
+        }
+        return view('thanks');
+    }
 }

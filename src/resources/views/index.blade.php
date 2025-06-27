@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Form</title>
+  <title>FashionablyLate</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 </head>
@@ -23,6 +23,7 @@
         <h2>Contact</h2>
       </div>
       <form class="form" action="/confirm" method="post">
+        @csrf
         <div class="form__group">
           <div class="form__group-title">
             <span class="form__label--item">お名前</span>
@@ -54,10 +55,10 @@
             <div class="form__input--text">
               <input type="radio" name="gender" value="male" id="gender-male" checked>
               <label for="gender-male">男性</label>
-              <input type="radio" name="gender" value="male" id="gender-male">
-              <label for="gender-male">女性</label>
+              <input type="radio" name="gender" value="female" id="gender-female">
+              <label for="gender-female">女性</label>
               <input type="radio" name="gender" value="other" id="gender-other">
-              <label for="gender-male">その他</label>
+              <label for="gender-other">その他</label>
             </div>
             <div class="form__error">
             @error('gender')
