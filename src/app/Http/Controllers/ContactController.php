@@ -9,7 +9,7 @@ use App\Http\Requests\ContactRequest;
 class ContactController extends Controller
 {
     public function index()
-    {
+    {   
         return view('index');
     }
 
@@ -28,5 +28,8 @@ class ContactController extends Controller
         }
         Contact::create($contact);
         return view('thanks');
+    }           
+    public function books(){
+        return $this->hasMany('App\Models\Category');
     }
 }
