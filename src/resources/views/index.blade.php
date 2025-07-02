@@ -26,8 +26,7 @@
         @csrf
         <div class="form__group">
           <div class="form__group-title">
-            <span class="form__label--item">お名前</span>
-            <span style="color: red;">※</span>
+            <span class="form__label--item">お名前</span><span class="required-mark">※</span>
           </div>
           <div class="form__group-content">
             <div class="form__input--text">
@@ -48,16 +47,15 @@
         </div>
         <div class="form__group">
           <div class="form__group-title">
-            <span class="form__label--item">性別</span>
-            <span style="color: red;">※</span>
+            <span class="form__label--item">性別</span><span class="required-mark">※</span>
           </div>
           <div class="form__group-content">
             <div class="form__input--text">
-              <input type="radio" name="gender" value="male" id="gender-male" checked>
+              <input type="radio" name="gender" value="0" id="gender-male" checked>
               <label for="gender-male">男性</label>
-              <input type="radio" name="gender" value="female" id="gender-female">
+              <input type="radio" name="gender" value="1" id="gender-female">
               <label for="gender-female">女性</label>
-              <input type="radio" name="gender" value="other" id="gender-other">
+              <input type="radio" name="gender" value="2" id="gender-other">
               <label for="gender-other">その他</label>
             </div>
             <div class="form__error">
@@ -69,8 +67,7 @@
         </div>
         <div class="form__group">
           <div class="form__group-title">
-            <span class="form__label--item">メールアドレス</span>
-            <span style="color: red;">※</span>
+            <span class="form__label--item">メールアドレス</span><span class="required-mark">※</span>
           </div>
           <div class="form__group-content">
             <div class="form__input--text">
@@ -85,14 +82,13 @@
         </div>
         <div class="form__group">
           <div class="form__group-title">
-            <span class="form__label--item">電話番号</span>
-            <span style="color: red;">※</span>
+            <span class="form__label--item">電話番号</span><span class="required-mark">※</span>
           </div>
           <div class="form__group-content">
             <div class="form__input--text">
-              <input type="tel" name="tel1" id="tel1" size="4" maxlength="4"> -
-              <input type="tel" name="tel2" id="tel2" size="4" maxlength="4"> -
-              <input type="tel" name="tel3" id="tel3" size="4" maxlength="4"> 
+              <input type="tel" name="tel1" id="tel1" size="4" placeholder="080" maxlength="4"> -
+              <input type="tel" name="tel2" id="tel2" size="4" maxlength="4" placeholder="1234"> -
+              <input type="tel" name="tel3" id="tel3" size="4" maxlength="4" placeholder="5678"> 
             </div>
             <div class="form__error">
             @error('tel')
@@ -104,8 +100,7 @@
         
         <div class="form__group">
           <div class="form__group-title">
-            <span class="form__label--item">住所</span>
-            <span style="color: red;">※</span>
+            <span class="form__label--item">住所</span><span class="required-mark">※</span>
           </div>
           <div class="form__group-content">
             <div class="form__input--text">
@@ -130,17 +125,19 @@
         </div>
         <div class="form__group">
           <div class="form__group-title">
-            <span class="form__label--item">お問い合わせの種類</span>
-            <span style="color: red;">※</span>
+            <span class="form__label--item">お問い合わせの種類</span><span class="required-mark">※</span>
           </div>
           <div class="form__group-content">
-          <select name="example">
-            <option>選択してください</option>
-            <option>選択肢のサンプル2</option>
-            <option>選択肢のサンプル3</option>
+          <select name="category_id">
+            <option value="">選択してください</option>
+            <option value="1">商品のお届けについて</option>
+            <option value="2">商品の交換について</option>
+            <option value="3">商品トラブル</option>
+            <option value="4">ショップへのお問い合わせ</option>
+            <option value="5">その他</option>
         </select>
             <div class="form__error">
-            @error('example')
+            @error('category_id')
                 {{ $message }}
             @enderror
             </div>
@@ -148,15 +145,14 @@
         </div>
         <div class="form__group">
           <div class="form__group-title">
-            <span class="form__label--item">お問い合わせ内容</span>
-            <span style="color: red;">※</span>
+            <span class="form__label--item">お問い合わせ内容</span><span class="required-mark">※</span>
           </div>
           <div class="form__group-content">
             <div class="form__input--textarea">
-              <textarea name="content" placeholder="お問い合わせの内容をご記載ください"></textarea>
+              <textarea name="detail" placeholder="お問い合わせの内容をご記載ください"></textarea>
             </div>
             <div class="form__error">
-            @error('content')
+            @error('detail')
                 {{ $message }}
             @enderror
             </div>

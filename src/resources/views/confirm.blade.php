@@ -32,14 +32,14 @@
             <tr class="confirm-table__row">
               <th class="confirm-table__header">性別</th>
               <td class="confirm-table__text">
-                @php
-                $genderLabel = [
-                    'male' => '男性',
-                    'female' => '女性',
-                    'other' => 'その他'
-                    ];
-                @endphp
-                <div>{{ $genderLabel[$contact['gender']] }}</div>
+              @php
+  $genderLabels = [
+    1 => '男性',
+    2 => '女性',
+    3 => 'その他'
+  ];
+@endphp
+<div>{{ $genderLabels[$contact['gender']] ?? '不明' }}</div>
               </td>
             </tr>
             <tr class="confirm-table__row">
@@ -50,35 +50,44 @@
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">電話番号</th>
-                <div>{{ $contact['tel'] }}</div>
-              <td class="confirm-table__text">
 
+              <td class="confirm-table__text">
+              <div>{{ $contact['tel'] }}</div>
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">住所</th>
-              <div>{{ $contact['address'] }}</div>
+            
               <td class="confirm-table__text">
-
+              <div>{{ $contact['address'] }}</div>
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">建物名</th>
-
+              
               <td class="confirm-table__text">
-
+              <div>{{ $contact['building'] ?? '' }}</div>
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせの種類</th>
               <td class="confirm-table__text">
-              <div>{{ $contact['example'] }}</div>
+              @php
+                $categoryLabel = [
+                    '1' => '商品のお届けについて',
+                    '2' => '商品の交換について',
+                    '3' => '商品トラブル',
+                    '4' => 'ショップへのお問い合わせ',
+                    '5' => 'その他',
+                    ];
+                @endphp
+                <div>{{ $categoryLabel[$contact['category_id']] }}</div>
               </td>
             </tr>
             <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせ内容</th>
               <td class="confirm-table__text">
-              <div>{{ $contact['content'] }}</div>
+              <div>{{ $contact['detail'] }}</div>
               </td>
             </tr>
           </table>
@@ -88,14 +97,14 @@
           <button type="submit" class="form__button-correct" name="action" value="back">修正</button>
         </div>
         <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" />
-        <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" />
+        <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}" />
         <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
         <input type="hidden" name="email" value="{{ $contact['email'] }}" />
         <input type="hidden" name="tel" value="{{ $contact['tel'] }}" />
         <input type="hidden" name="address" value="{{ $contact['address'] }}" />
-        <input type="hidden" name="building" value="{{ $contact['building'] }}" />
-        <input type="hidden" name="example" value="{{ $contact['example'] }}" />
-        <input type="hidden" name="content" value="{{ $contact['content'] }}">
+        <input type="hidden" name="building" value="{{ $contact['building'] ?? '' }}" />
+        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
+        <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
       </form>
     </div>
   </main>

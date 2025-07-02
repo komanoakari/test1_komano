@@ -14,4 +14,9 @@ class Category extends Model
         'contact_id' => 'required',
         'content' => 'required',
     );
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }

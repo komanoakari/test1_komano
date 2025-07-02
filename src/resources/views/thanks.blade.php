@@ -12,18 +12,16 @@
 
 <body>
   <div class="thanks-wrapper">
-    <div class="thanks-message">Thank you</div>
+    <div class="thanks-message">Thank&nbsp;you</div>
   </div>
   <main>
     <div class="thanks__content">
       <div class="thanks__heading">
         <h2>お問い合わせありがとうございました</h2>
       </div>
-      <form action="/" method="post">
       <div class="form__button">
-          <button class="form__button-submit" type="submit">HOME</button>
+      <a href="/" class="form__button-submit">HOME</a>
         </div>
-    </form>
     </div>
   </main>
 </body>

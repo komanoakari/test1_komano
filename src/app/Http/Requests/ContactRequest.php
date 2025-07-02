@@ -28,10 +28,13 @@ class ContactRequest extends FormRequest
             'first_name' => 'required',
             'gender' => 'required',
             'email' => 'required|email',
-            'tel' => 'required|regex:/^[0-9]+$/|max:11',
+            'tel1' => 'required|digits:3',
+            'tel2' => 'required|digits:4',
+            'tel3' => 'required|digits:4',
             'address' => 'required',
-            'example' => 'required',
-            'content' => 'required|max:120',
+            'building' => 'nullable',
+            'category_id' => 'required',
+            'detail' => 'required|max:120',
         ];
     }
 
@@ -43,13 +46,15 @@ class ContactRequest extends FormRequest
       'gender.required' => '性別を入力してください',
       'email.required' => 'メールアドレスを入力してください',
       'email.email' => 'メールアドレスはメール形式で入力してください',
-      'tel.required' => '電話番号を入力してください',
-      'tel.regex' => '電話番号は5桁までの数字で入力してください',
-      'tel.max' => '電話番号は5桁までの数字で入力してください',
-      'tel.required' => '電話番号を入力してください',
-      'example.required' => 'お問い合わせの種類を選択してください',
-      'content.required' => 'お問い合わせ内容を入力してください',
-      'content.max' => 'お問合せ内容は120文字以内で入力してください',
+      'tel1.required' => '電話番号を入力してください',
+        'tel1.digits' => '電話番号は11桁で入力してください',
+        'tel2.required' => '電話番号を入力してください',
+        'tel2.digits' => '電話番号は11桁で入力してください',
+        'tel3.required' => '電話番号を入力してください',
+        'tel3.digits' => '電話番号は11桁で入力してください',
+      'category_id.required' => 'お問い合わせの種類を選択してください',
+      'detail.required' => 'お問い合わせ内容を入力してください',
+      'detail.max' => 'お問合せ内容は120文字以内で入力してください',
     ];
 }
 }

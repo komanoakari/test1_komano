@@ -1,0 +1,183 @@
+.header {
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.header p {
+    color: #BC8F8F;
+    font-family: 'Hiragino Mincho Pro', 'Yu Mincho', 'MS PMincho', serif;
+    text-decoration: none;
+    font-size: 30px;
+    display: flex;
+    justify-content:center
+}
+
+.contact-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+    text-align: center;
+}
+
+.contact-form__heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    color: #BC8F8F;
+    font-family: 'Hiragino Mincho Pro', 'Yu Mincho', 'MS PMincho', serif;
+    font-size: 24px;
+}
+
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 1000px;
+}
+
+.form__label--item {
+    margin-right: 2px;
+}
+
+.required-mark {
+    color: red;
+    font-size: 14px;
+    vertical-align: middle; }
+
+.form__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 40px;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+.form__input--text {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+        /* 上下中央に揃える */
+}
+
+.form__group-title {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    gap: 4px;
+    text-align: left;
+}
+
+.form__group-content {
+    width: 100%;
+    max-width: 700px;
+        text-align: left;
+}
+
+.form__group-content select {
+    border: none;
+        border-radius: 6px;
+        background-color: #F5F5F5;
+        padding: 10px;
+        height: 40px;
+        width: 350px;
+        color: #A9A9A9;
+}
+
+.form__input--text input{
+    border: none;
+    border-radius: 6px;
+    background-color: #F5F5F5;
+    padding: 10px;
+    width: 100%;
+    max-width: 320px;
+    color: #A9A9A9;
+}
+
+.form__input--text input[type="radio"] {
+    width: 16px;
+        height: 16px;
+        border: 2px solid #8B4513;
+        /* 枠線だけにして主張を抑える */
+        border-radius: 50%;
+        background-color: #fff;
+        margin-right: 6px;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        color: #A9A9A9;
+}
+
+.form__input--text input[type="tel"] {
+        text-align: center;
+}
+.form__input--textarea textarea {
+    border: none;
+        border-radius: 6px;
+        background-color: #F5F5F5;
+        padding: 10px;
+    height: 180px; 
+    width: 100%;
+        max-width: 640px;
+    color: #A9A9A9;
+}
+
+input,
+select,
+textarea,
+label {
+    color: #A9A9A9;
+}
+
+.form__label--item {
+    color: #696969;
+    margin-right: 24px;
+    font-family: 'Hiragino Mincho Pro', 'Yu Mincho', 'MS PMincho', serif;
+        font-size: 16px;
+        margin-right: 0;
+    }
+
+.required-mark {
+            color: red;
+            font-size: 14px;
+            vertical-align: middle;   
+        }
+
+        .form__group--textarea {
+  display: block; /* ← フレックスを解除して縦並びに */
+  margin-bottom: 25px;
+}
+
+.form__group--textarea .form__group-title {
+  margin-bottom: 10px;
+}
+
+.form__group--textarea .form__group-content {
+  width: 100%; /* or 700pxなど */
+}
+
+.form__button {
+    margin-top: 40px; }
+
+.form__button-submit {
+    padding: 10px;
+    font-size: 20px;
+    width: 20%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #8B4513;
+    color: #fff;
+    align-items: center;
+    cursor: pointer; }

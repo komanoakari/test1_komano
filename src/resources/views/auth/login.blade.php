@@ -7,23 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FashionablyLate</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/login.css') }}?v=1.0">
+
 </head>
 
 <body>
 <header class="header">
     <div class="header__inner">
     <p>FashionablyLate</p>
-        <nav>
-          <ul class="header-nav">
-            <li class="header-nav__item">
-              <form action="/register" method="post">
-                <button class="header-nav__button">register</button>
-              </form>
-            </li>
-          </ul>
+        <nav class="header-nav">
+            <a href="/register" class="header-nav__button">register</a>
         </nav>
-      </div>
+    </div>
   </header>
 
   <main>
@@ -31,7 +26,7 @@
   <div class="login-form__heading">
     <h2>login</h2>
   </div>
-  <form class="form" action="/login" method="post">
+  <form class="form" action="/login" method="get">
     @csrf
     <div class="form__group">
       <div class="form__group-title">
@@ -39,7 +34,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="email" name="email" value="{{ old('email') }}" />
+          <input type="email" name="email" value="{{ old('email') }}" placeholder="例:山田　太郎"/>
         </div>
         <div class="form__error">
           @error('email')
@@ -54,7 +49,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="password" name="password" />
+          <input type="password" name="password" placeholder="例:coachtech106"/>
         </div>
         <div class="form__error">
           @error('password')
